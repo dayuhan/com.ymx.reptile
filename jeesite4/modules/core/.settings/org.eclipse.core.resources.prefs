@@ -1,9 +1,16 @@
 eclipse.preferences.version=1
 encoding//src/main/java=UTF-8
 encoding//src/main/resources=UTF-8
+encoding//src/main/resources/config/beetl-core.properties=UTF-8
+encoding//src/main/resources/i18n/core/sys/i18n_en.properties=UTF-8
 encoding//src/main/resources/views=UTF-8
 encoding//src/main/resources/views/modules/sys/areaList.html=UTF-8
 encoding//src/main/resources/views/modules/sys/user/corpAdminForm.html=UTF-8
 encoding//src/main/resources/views/modules/sys/user/empUserList.html=UTF-8
+encoding//src/main/resources/views/themes/default/modules/sys/sysIndex=UTF-8
+encoding//src/main/resources/views/themes/default/modules/sys/sysIndex/leftMenu.html=UTF-8
+encoding//src/main/resources/views/themes/default/modules/sys/sysIndex/topMenu.html=UTF-8
+encoding//src/main/resources/views/themes/default/modules/sys/sysIndex/topMenuCorp.html=UTF-8
+encoding//src/main/resources/views/themes/default/modules/sys/sysLogin.html=UTF-8
 encoding//src/test/java=UTF-8
 encoding/<project>=UTF-8
