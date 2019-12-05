@@ -10,7 +10,7 @@
 		<relativePath>../parent/pom.xml</relativePath>
 	</parent>
 	
-	<artifactId>com.ymx.reptile</artifactId>
+	<artifactId>Reptile</artifactId>
 	<packaging>war</packaging>
 	
 	<name>JeeSite Web</name>
