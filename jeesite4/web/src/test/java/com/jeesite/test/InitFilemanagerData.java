@@ -20,10 +20,11 @@ import com.jeesite.modules.Application;
 @Rollback(false)
 public class InitFilemanagerData extends com.jeesite.modules.filemanager.db.InitFilemanagerData {
 	
+	//屏蔽初始化
 	@Test
 	public void initFilemanagerData() throws Exception{
-		createTable();
-		initFilemanagerFolder();
+/*		createTable();
+		initFilemanagerFolder();*/
 	}
 	
 }
