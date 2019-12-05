@@ -13,7 +13,7 @@ import com.daxv.common.Vo.UserEntity;
  * @author xu.da1
  * 用户授权验证
  */
-public class AccessControlInterceptor extends HandlerInterceptorAdapter {
+public class AccessControlInterceptor extends  HandlerInterceptorAdapter {
 	private int openingTime;
 	private int closingTime;
 	 
