@@ -23,7 +23,7 @@ public class InitCoreData extends com.jeesite.modules.sys.db.InitCoreData {
 	//屏蔽初始化
 	@Test
 	public void initCoreData() throws Exception{
-/*		createTable();
+/* 		createTable();
 		initLog();
 		initArea("3700","3701","3702");
 		initConfig();
@@ -38,7 +38,7 @@ public class InitCoreData extends com.jeesite.modules.sys.db.InitCoreData {
 		initEmpUser();
 		initMsgPushJob();
 		initGenTestData();
-		initGenTreeData();*/
+		initGenTreeData();*/ 
 	}
 	
 }

@@ -23,8 +23,8 @@ public class InitFilemanagerData extends com.jeesite.modules.filemanager.db.Init
 	//屏蔽初始化
 	@Test
 	public void initFilemanagerData() throws Exception{
-/*		createTable();
-		initFilemanagerFolder();*/
+ 	createTable();
+/*		initFilemanagerFolder(); */
 	}
 	
 }
