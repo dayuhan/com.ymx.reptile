@@ -2,5 +2,8 @@
     <wb-module deploy-name="jeesite-common">
         <wb-resource deploy-path="/" source-path="/src/main/java"/>
         <wb-resource deploy-path="/" source-path="/src/main/resources"/>
+        <dependent-module archiveName="Com.Daxv.Frame.jar" deploy-path="/" handle="module:/resource/Com.Daxv.Frame/Com.Daxv.Frame">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
     </wb-module>
 </project-modules>
