@@ -5,7 +5,7 @@ import com.daxv.common.Bus.PushTypeBase;
 
 public abstract class QueueFactory {
 
-	public Queue queue; 
+
 	public Queue getQueueByConfig(Config config) {
 		return new Queue(config);
 	} 

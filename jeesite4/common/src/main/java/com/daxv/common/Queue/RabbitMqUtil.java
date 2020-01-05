@@ -52,6 +52,7 @@ public class RabbitMqUtil {
 				factory.setPassword(rabbitConfig.getPassWord());
 				con = factory.newConnection();
 			}
+			System.out.println("兄弟我只能执行一次不要犯傻，创建一大堆TCP连接，耗死自己哦~~~");
 			ch = con.createChannel();
 			exchangeConfig();
 
@@ -84,8 +85,8 @@ public class RabbitMqUtil {
 		} catch (Exception e) {
 			// TODO: handle exception
 		} finally {
-			ch.close();
-			con.close();
+			//ch.close();
+			//con.close();
 		}
 		return flag;
 	}
@@ -112,8 +113,8 @@ public class RabbitMqUtil {
 		} catch (Exception e) {
 			// TODO: handle exception
 		} finally {
-			ch.close();
-			con.close();
+			//ch.close();
+			//con.close();
 		}
 		return flag;
 	}
@@ -133,11 +134,12 @@ public class RabbitMqUtil {
 		try {
 			// QueueingConsumer 弃用
 			// aotoAck = true，不需要回复，接收到消息后，queue上的消息就会清除
-			// aoto =
+			// aotoAck =
 			// false，需要回复，接收到消息后，queue上的消息不会被清除，直到调用channel.basicAck(deliveryTag,
 			// false); queue上的消息才会被清除 而且，在当前连接断开以前，其它客户端将不能收到此queue上的消息
 			// 监听队列，false表示手动返回完成状态，true表示自动
 			// ch.basicConsume(queueName, false, new MyConsumer(ch,con)); 
+			
 			ch.basicConsume(queueName, false, new Consumer() {
 			 
 				public void handleDelivery(String arg0, Envelope arg1,
@@ -156,43 +158,48 @@ public class RabbitMqUtil {
 						if (!pushJson.isEmpty()) {
 							//具体业务逻辑实现...
 							rQueueDao.ReadQueue(pushJson);
+							System.out.println("开始关闭");
 							//返回确认状态，手动模式
 							ch.basicAck(arg1.getDeliveryTag(), false);
-							ch.close();
-							con.close();
+							//ch.close();
+							//con.close(); 
+							System.out.println("关闭完成");
 						}
 					} catch (Exception e) {
 						// TODO: handle exception
-					}
-				} 
-			 
-			 
+					}   
+				}  
 				public void handleConsumeOk(String consumerTag) {
+					//System.out.println("handleConsumeOk"); 
 				}
  
 				public void handleCancelOk(String consumerTag) {
+					//System.out.println("handleCancelOk");
 				}
  
 				public void handleCancel(String consumerTag) throws IOException {
+					//System.out.println("handleCancel");
 				}
  
 				public void handleShutdownSignal(String consumerTag,
 						ShutdownSignalException sig) {
+					 //System.out.println("handleShutdownSignal");
 				}
  
 				public void handleRecoverOk(String consumerTag) {
+					//System.out.println("handleRecoverOk");
 				}
 
 				// 自定义函数，通过对象引用方式传出值/传人值
 				public Consumer backMessAge(PushInfo pushInfo) {
 					return this;
 				}
-			});
-
-			if (!pushJson.isEmpty()) {
+			}); 
+			
+		/*	if (!pushJson.isEmpty()) {
 				System.out.println("获取消息是：" + pushJson);
 				return pushJson;
-			}
+			}*/
 
 		} catch (Exception e) {
 			// TODO: handle exception

@@ -7,7 +7,7 @@ import com.daxv.common.Bus.PushTypeBase;
  
 
 public class QueueHandler extends QueueFactory {
-
+	public Queue queue; 
 	public Config config;
 	public QueueHandler() {
 		super();
@@ -17,6 +17,7 @@ public class QueueHandler extends QueueFactory {
 	public QueueHandler(Config configInfo) {
 		super();
 		config = configInfo;
+		queue= this.getQueueByConfig(config);
 	} 
 	/**
 	 * 添加到队列
@@ -26,10 +27,14 @@ public class QueueHandler extends QueueFactory {
 		// TODO Auto-generated method stub
 		boolean flag = false;
 		try {
-			flag = this.getQueueByConfig(config).AddProducerMQ(queueName,
+			System.out.println("b1");
+			flag =queue.AddProducerMQ(queueName,
 					pushInfo);
+			System.out.println("b2");
 		} catch (Exception e) {
 			// TODO: handle exception
+			System.out.println("b3");
+			System.out.println(e.getMessage());
 		}
 		return flag;
 	}
@@ -40,7 +45,7 @@ public class QueueHandler extends QueueFactory {
 	public String GetQueues(String queueName,ReadQueueDao rQueueDao) {
 		String jsonStr = null;
 		try {
-			jsonStr = this.getQueueByConfig(config).GetQueues(queueName,rQueueDao);
+			jsonStr = queue.GetQueues(queueName,rQueueDao);
 
 		} catch (Exception e) {
 			// TODO: handle exception
