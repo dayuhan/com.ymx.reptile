@@ -1,0 +1,19 @@
+ 
+<% layout('/layouts/default.html', {title: '跟单监控', libs: ['validate','fileupload']}){ %>
+<h1>我是跟单页面qqqqqqqqqq</h1>
+<button id="search">查询</button>
+
+<% } %>
+
+<script type="text/javascript">
+$(function(){
+   
+$("#search").on("click",function(){
+	alert("哈哈");
+	$.post("${ctx}/ymx/post/spiderApi",{name:"欢迎"},function(data){
+		alert(data);
+		
+	},"JSON"); 
+});
+})
+</script>

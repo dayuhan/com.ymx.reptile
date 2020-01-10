@@ -7,13 +7,16 @@ import com.daxv.common.Bus.PushTypeBase;
  
 
 public class QueueHandler extends QueueFactory {
-	public Queue queue; 
+	private Queue queue; 
 	public Config config;
 	public QueueHandler() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	
+	public Queue getQueue() {
+		return queue;
+	} 
 	public QueueHandler(Config configInfo) {
 		super();
 		config = configInfo;

@@ -12,6 +12,10 @@ import com.daxv.common.Bus.PushTypeBase;
 
 public class Queue {
 	private RabbitMqUtil raMqUtil;
+	
+	public RabbitMqUtil getRaMqUtil() {
+		return raMqUtil;
+	}
 	public Queue() {
 		super();
 		// TODO Auto-generated constructor stub

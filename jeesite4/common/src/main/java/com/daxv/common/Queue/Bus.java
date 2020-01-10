@@ -19,7 +19,8 @@ public class Bus {
 		boolean flag=false;
 		try {
 			ibus.doQueueHandle(queueHandler);
-			//queueManager.SendQueue() ;
+			//释放TCP通道
+			queueHandler.getQueue().getRaMqUtil().dispose(); 
 			flag=true;
 		} catch (Exception e) {
 			// TODO: handle exception

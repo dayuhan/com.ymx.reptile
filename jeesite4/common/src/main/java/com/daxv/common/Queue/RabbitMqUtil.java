@@ -52,7 +52,7 @@ public class RabbitMqUtil {
 				factory.setPassword(rabbitConfig.getPassWord());
 				con = factory.newConnection();
 			}
-			System.out.println("兄弟我只能执行一次不要犯傻，创建一大堆TCP连接，耗死自己哦~~~");
+			//System.out.println("兄弟我只能执行一次不要犯傻，创建一大堆TCP连接，耗死自己哦~~~");
 			ch = con.createChannel();
 			exchangeConfig();
 
@@ -85,8 +85,8 @@ public class RabbitMqUtil {
 		} catch (Exception e) {
 			// TODO: handle exception
 		} finally {
-			//ch.close();
-			//con.close();
+			/*ch.close();
+			con.close();*/
 		}
 		return flag;
 	}
@@ -113,8 +113,8 @@ public class RabbitMqUtil {
 		} catch (Exception e) {
 			// TODO: handle exception
 		} finally {
-			//ch.close();
-			//con.close();
+			/*ch.close();
+			con.close();*/
 		}
 		return flag;
 	}
@@ -157,13 +157,9 @@ public class RabbitMqUtil {
 						// backMessAge(new PushInfo());//向外传参 不能直接修改方法变量的值；可以访问父类的成员变量
 						if (!pushJson.isEmpty()) {
 							//具体业务逻辑实现...
-							rQueueDao.ReadQueue(pushJson);
-							System.out.println("开始关闭");
+							rQueueDao.ReadQueue(pushJson); 
 							//返回确认状态，手动模式
-							ch.basicAck(arg1.getDeliveryTag(), false);
-							//ch.close();
-							//con.close(); 
-							System.out.println("关闭完成");
+							ch.basicAck(arg1.getDeliveryTag(), false);  
 						}
 					} catch (Exception e) {
 						// TODO: handle exception
@@ -243,4 +239,20 @@ public class RabbitMqUtil {
 		boolean persistMode = true;// 是否对消息队列持久化保存
 		ch.exchangeDeclare(EXCHANGE_NAME, "direct");
 	}
+	/**
+	 * 释放连接
+	 * @throws IOException
+	 * @throws TimeoutException
+	 */
+    public void dispose() throws IOException, TimeoutException
+    {
+        if (ch != null && ch.isOpen())
+        {
+            ch.close(); 
+        }
+        if (con != null && con.isOpen())//has AutoClose , dobule check
+        {
+            con.close(); 
+        }
+    }
 }
