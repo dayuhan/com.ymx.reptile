@@ -97,7 +97,7 @@ public class HttpClient {
 
 				}
 			}
-			if(!sbBuilder.toString().isEmpty()){ 
+			if(sbBuilder.toString().isEmpty()){ 
 				this.httpDao.requestFinish(result);
 			}else {
 				this.httpDao.requestFail(String.format("失败原因：%s", sbBuilder.toString()));
@@ -158,7 +158,7 @@ public class HttpClient {
 					sbBuilder.append(" IOException:" + e.getMessage());
 				}
 			}
-			if(!sbBuilder.toString().isEmpty()){ 
+			if(sbBuilder.toString().isEmpty()){ 
 				this.httpDao.requestFinish(result);
 			}else {
 				this.httpDao.requestFail(String.format("失败原因：%s", sbBuilder.toString()));

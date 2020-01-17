@@ -80,6 +80,10 @@
 
 	</dependencies>
 	
+	
+ 
+	
+	
 	<build>
 		<finalName>${finalName}</finalName>
 		<outputDirectory>${project.basedir}/src/main/webapp/WEB-INF/classes/</outputDirectory>
@@ -121,6 +125,19 @@
 					<wtpversion>2.0</wtpversion>
 					<jeeversion>6.0</jeeversion>
 				</configuration>
+			</plugin>
+			<!-- spring热部署 插件 -->
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<dependencies>
+					<!-- spring热部署 插件 -->
+					<dependency>
+						<groupId>org.springframework</groupId>
+						<artifactId>springloaded</artifactId>
+						<version>1.2.6.RELEASE</version>
+					</dependency>
+				</dependencies>
 			</plugin>
 			
 		</plugins>

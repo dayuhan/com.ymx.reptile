@@ -4,6 +4,21 @@
 #========== Database sttings ==========#
 #======================================#
 
+# 队列服务
+queueConfig:
+
+  #队列服务器地址
+  hostName: 192.168.43.93
+ 
+  #用户名
+  userName: daxu
+ 
+  #密码
+  passWord: 13528764027
+ 
+  #虚拟主机
+  virtualHost: dxhost
+ 
 # 数据库连接
 jdbc: 
   
@@ -391,14 +406,17 @@ shiro:
     /validCode = anon
     /account/* = anon
     /static/** = anon
+ 
     /userfiles/** = anon
     /druid/** = perms[sys:state:druid]
     /v2/api-docs = perms[sys:swagger]
     /swagger-ui.html = perms[sys:swagger]
     /swagger-resources/** = perms[sys:swagger]
+    
     ${adminPath}/login-cas = cas
     ${adminPath}/login = authc
     ${adminPath}/logout = logout
+    ${adminPath}/ymx/spiderResultAPi/* = anon 
     ${adminPath}/file/** = user
     ${adminPath}/cms/* = perms[cms:view]
     ${adminPath}/cms/site/select = user
@@ -407,7 +425,7 @@ shiro:
     ${adminPath}/cms/category/* = perms[cms:category:view]
     ${adminPath}/cms/article/* = perms[cms:article:view]
     ${adminPath}/cms/link/* = perms[cms:link:view]
-  
+    /webSocket/* =anon
 # Session 相关
 session:
 
