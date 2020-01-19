@@ -11,14 +11,15 @@
 	<name>JeeSite</name>
 	<url>http://jeesite.com</url>
 	<inceptionYear>2013-Now</inceptionYear>
-	
+
 	<modules>
-        <module>../parent</module>
-        <module>../common</module>
-        <module>../modules/core</module>
-        <module>../web</module>
-    </modules>
-	
+		<module>../parent</module>
+		<module>../common</module>
+		<module>../modules/core</module>
+		<module>../web</module>
+		<module>../webspider</module>
+	</modules>
+
 	<developers>  
 		<developer>
 			<id>thinkgem</id>

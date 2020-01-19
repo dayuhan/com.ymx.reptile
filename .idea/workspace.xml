@@ -23,7 +23,14 @@
     <select />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/jeesite4/webspider" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
   </component>
   <component name="ProjectId" id="1WVdfLndPyQXzyzYUuoOJEaYeyn" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -32,7 +39,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/jeesite4" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.importing" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -60,6 +67,9 @@
       <workItem from="1579240189817" duration="493000" />
       <workItem from="1579254044132" duration="218000" />
       <workItem from="1579254418478" duration="93000" />
+      <workItem from="1579254532525" duration="699000" />
+      <workItem from="1579255319621" duration="298000" />
+      <workItem from="1579404514121" duration="157000" />
     </task>
     <servers />
   </component>
